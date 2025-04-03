@@ -1,4 +1,5 @@
 import java.text.NumberFormat;
+import java.util.Scanner;
 
 public class More {
 
@@ -61,7 +62,58 @@ public class More {
         String s = NumberFormat.getPercentInstance().format(0.1);
         System.out.println(s);
 
-
+        input();
+        calculator();
 
     }
+
+
+    public static void input() {
+        System.out.println("this is the input method");
+
+        // Reading user input with Scanner
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Age: ");
+        byte age = scanner.nextByte();
+        System.out.println("You are " + age);
+
+        Scanner scannerString = new Scanner(System.in);
+        System.out.print("Name: ");
+        String name = scannerString.nextLine().trim();
+        System.out.println("You name is " + name);
+    }
+
+
+    // Mortgage calculator exercise
+    public static void  calculator () {
+        final byte MONTHS_IN_YEAR = 12;
+        final byte PERCENT = 100;
+
+        Scanner scannerCalculator = new Scanner(System.in);
+
+        System.out.print("Principal: ");
+        int principal = scannerCalculator.nextInt();
+
+        System.out.print("Annual Interest Rate: ");
+        double annualInterestRate = scannerCalculator.nextDouble();
+        double monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR;
+        double monthlyInterestRatePercentage = monthlyInterestRate / PERCENT;
+
+        System.out.print("Period (Years): ");
+        int period = scannerCalculator.nextInt();
+        int periodInMonths = period * MONTHS_IN_YEAR;
+
+        double numerator = monthlyInterestRatePercentage * Math.pow((1 + monthlyInterestRatePercentage), periodInMonths);
+        double denominator = Math.pow((1 + monthlyInterestRatePercentage), periodInMonths) - 1;
+
+        double mortgage = principal * numerator / denominator;
+        String currencyMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
+        System.out.println("Mortgage: " + currencyMortgage);
+
+    }
+
+    // Stopped at Mortgage calculator exercise.
+
+
 }

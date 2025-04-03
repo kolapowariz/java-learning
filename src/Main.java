@@ -33,11 +33,12 @@ public class Main {
         point1.x = 4;
         System.out.println(point2);
 
+        // Strings
 
-        String message = "  Hello World" + "!!   ";
+        String message = "  Hello World" + "!!  ";
         System.out.println(message);
-//        System.out.println(message.endsWith("!!"));
-//        System.out.println(message.startsWith("!!"));
+        System.out.println(message.endsWith("!!"));
+        System.out.println(message.startsWith("!!"));
         System.out.println(message.length());
         System.out.println(message.indexOf("H"));
         System.out.println(message.replace("!", "*"));
@@ -46,6 +47,8 @@ public class Main {
         System.out.println(message.toUpperCase());
         System.out.println(message.trim());
         System.out.println(message);
+
+        // Escape sequences
 
         String name = "Hello \"Wariz\"";
         System.out.println(name);
@@ -59,12 +62,15 @@ public class Main {
         String backslashT = "c:\twindows\\...";
         System.out.println(backslashT);
 
+        // Arrays
+
         int [] numbers = {3, 2, 1, 5, 6};
         System.out.println(Arrays.toString(numbers));
         Arrays.sort(numbers);
         System.out.println(Arrays.toString(numbers));
         System.out.println("Length is " + numbers.length);
 
+        // Multidimensional Array
 
         int[][] twoDimensionalArray = { {1, 2, 3}, {4, 5, 6} };
         System.out.println(Arrays.deepToString(twoDimensionalArray));
