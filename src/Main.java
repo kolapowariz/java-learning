@@ -34,7 +34,6 @@ public class Main {
         System.out.println(point2);
 
         // Strings
-
         String message = "  Hello World" + "!!  ";
         System.out.println(message);
         System.out.println(message.endsWith("!!"));
@@ -49,7 +48,6 @@ public class Main {
         System.out.println(message);
 
         // Escape sequences
-
         String name = "Hello \"Wariz\"";
         System.out.println(name);
 
@@ -63,7 +61,6 @@ public class Main {
         System.out.println(backslashT);
 
         // Arrays
-
         int [] numbers = {3, 2, 1, 5, 6};
         System.out.println(Arrays.toString(numbers));
         Arrays.sort(numbers);
@@ -71,17 +68,14 @@ public class Main {
         System.out.println("Length is " + numbers.length);
 
         // Multidimensional Array
-
         int[][] twoDimensionalArray = { {1, 2, 3}, {4, 5, 6} };
         System.out.println(Arrays.deepToString(twoDimensionalArray));
 
         // Constant
-
         final float PI = 3.14F;
         System.out.println("PI result = " + PI);
 
         // Arithemetic expression
-
         int result = 10 + 3;
         System.out.println(result);
 
@@ -89,7 +83,6 @@ public class Main {
         System.out.println(result2);
 
         // Increment and decrement operator
-
         int x = 1;
         x++;
         ++x;
@@ -107,20 +100,15 @@ public class Main {
         System.out.println(l);
 
         // Augmented operator
-
         int j = 1;
         j +=2;
         System.out.println(j);
 
         // Order of operation
-
         int xOrder = 10 + 3 * 2;
         int yOrder = (10 + 3) * 2;
         System.out.println(xOrder);
         System.out.println(yOrder);
-
-
-
 
     }
 }

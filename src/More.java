@@ -1,4 +1,5 @@
 import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class More {
@@ -25,7 +26,6 @@ public class More {
         System.out.println(h);
 
         // Math method
-
         int i = Math.round(1.1F);
         System.out.println(i);
 
@@ -62,9 +62,144 @@ public class More {
         String s = NumberFormat.getPercentInstance().format(0.1);
         System.out.println(s);
 
-        input();
-        calculator();
 
+        // Comparison Operator
+        int x = 2;
+        int y = 2;
+
+        System.out.println(x >= y);
+
+        // Logical Operator
+
+        // And operator &&
+        int temperature = 12;
+        boolean isWarm = temperature > 20 && temperature < 10;
+        System.out.println(isWarm);
+
+        // Or operator ||
+        boolean hasHighIncome = false;
+        boolean hasGoodCredit = false;
+        boolean isEligible = hasHighIncome || hasGoodCredit;
+        System.out.println(isEligible);
+
+
+        // Not operator !
+        System.out.println(!isEligible);
+
+        // if statements
+        int temp = 22;
+
+        if (temp > 30) {
+            System.out.println("It's a hot day");
+            System.out.println("Drink plenty of water");
+        } else if (temp >= 20 && temp <= 30) {
+            System.out.println("It's a nice day");
+        } else {
+            System.out.println("It's cold");
+        }
+
+
+        // Simplifying if statement
+        int income = 120_000;
+        boolean hasHighIncome2 = income > 100_000;
+        System.out.println(hasHighIncome2);
+
+        // Ternary Operator
+        int income2 = 120_000;
+        String className = income2 > 100_000 ? "First" : "Second";
+        System.out.println(className);
+
+
+        // Switch statement
+        String role = "admin";
+
+        switch (role) {
+            case "admin":
+                System.out.println("You're an admin");
+                break;
+            case "Moderator":
+                System.out.println("You're a moderator");
+                break;
+            default:
+                System.out.println("You're a guest");
+        }
+
+        // For loops
+        for (int ij = 0; ij < 5; ij++)
+            System.out.println("Hello World!!! " + ij);
+
+        for (int ij = 5; ij > 0; ij--)
+            System.out.println(ij);
+
+
+        // while loops
+        int jk = 0;
+        while (jk < 5) {
+            System.out.println("while loop " + jk);
+            jk++;
+        }
+
+        int ij = 5;
+        while (ij > 0) {
+            System.out.println("While loop " + ij);
+            ij--;
+        }
+
+
+        Scanner scannerLoop = new Scanner(System.in);
+        String input = "";
+        int principal = 0;
+
+//        while (!input.equals("quit")) {
+//            System.out.print("Input ");
+//            input = scannerLoop.next().toLowerCase();
+//            System.out.println(input);
+//        }
+
+        while (principal < 1000 || principal > 1000000){
+            System.out.print("Principal ");
+            principal = scannerLoop.nextInt();
+//            if (principal < 1000)
+//                continue;
+            System.out.println("Enter a value greater than 1000 and lesser than 1_000_000");
+        }
+
+
+        // Do While loop
+//        do {
+//            System.out.print("Input ");
+//            input = scannerLoop.next().toLowerCase();
+//            System.out.println(input);
+//        } while (!input.equals("quit"));
+
+
+        // Break statement
+//        while (true) {
+//            System.out.print("Input ");
+//            input = scannerLoop.next().toLowerCase();
+//            if (input.equals("pass"))
+//                continue;
+//            if (input.equals("quit"))
+//                break;
+//            System.out.println(input);
+//        }
+
+
+
+        // For Each loop
+        String [] fruits = { "Apple", "Mango", "Orange"};
+
+        for (int il = 0; il < fruits.length; il++){
+            System.out.println("For loop " + fruits[il]);
+        }
+
+        for(String fruit : fruits)
+            System.out.println("For each loop " + fruit);
+
+
+
+//        fizzbuzz();
+//        input();
     }
 
 
@@ -72,7 +207,6 @@ public class More {
         System.out.println("this is the input method");
 
         // Reading user input with Scanner
-
         Scanner scanner = new Scanner(System.in);
         System.out.print("Age: ");
         byte age = scanner.nextByte();
@@ -85,35 +219,24 @@ public class More {
     }
 
 
-    // Mortgage calculator exercise
-    public static void  calculator () {
-        final byte MONTHS_IN_YEAR = 12;
-        final byte PERCENT = 100;
 
-        Scanner scannerCalculator = new Scanner(System.in);
+    // fizzbuzz
+    public static void fizzbuzz() {
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Principal: ");
-        int principal = scannerCalculator.nextInt();
+        System.out.print("Number: ");
+        int number = scanner.nextInt();
 
-        System.out.print("Annual Interest Rate: ");
-        double annualInterestRate = scannerCalculator.nextDouble();
-        double monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR;
-        double monthlyInterestRatePercentage = monthlyInterestRate / PERCENT;
-
-        System.out.print("Period (Years): ");
-        int period = scannerCalculator.nextInt();
-        int periodInMonths = period * MONTHS_IN_YEAR;
-
-        double numerator = monthlyInterestRatePercentage * Math.pow((1 + monthlyInterestRatePercentage), periodInMonths);
-        double denominator = Math.pow((1 + monthlyInterestRatePercentage), periodInMonths) - 1;
-
-        double mortgage = principal * numerator / denominator;
-        String currencyMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
-        System.out.println("Mortgage: " + currencyMortgage);
+        if (number % 5 == 0 && number % 3 == 0) {
+            System.out.println("FizzBuzz");
+        } else if (number % 5 == 0) {
+            System.out.println("Fizz");
+        } else if(number % 3 == 0) {
+            System.out.println("Buzz");
+        } else {
+            System.out.println(number);
+        }
 
     }
-
-    // Stopped at Mortgage calculator exercise.
-
 
 }
