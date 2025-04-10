@@ -1,5 +1,4 @@
 import java.text.NumberFormat;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class More {
@@ -150,39 +149,39 @@ public class More {
         String input = "";
         int principal = 0;
 
-//        while (!input.equals("quit")) {
-//            System.out.print("Input ");
-//            input = scannerLoop.next().toLowerCase();
-//            System.out.println(input);
-//        }
+        while (!input.equals("quit")) {
+            System.out.print("Input ");
+            input = scannerLoop.next().toLowerCase();
+            System.out.println(input);
+        }
 
         while (principal < 1000 || principal > 1000000){
             System.out.print("Principal ");
             principal = scannerLoop.nextInt();
-//            if (principal < 1000)
-//                continue;
+            if (principal < 1000)
+                continue;
             System.out.println("Enter a value greater than 1000 and lesser than 1_000_000");
         }
 
 
         // Do While loop
-//        do {
-//            System.out.print("Input ");
-//            input = scannerLoop.next().toLowerCase();
-//            System.out.println(input);
-//        } while (!input.equals("quit"));
+        do {
+            System.out.print("Input ");
+            input = scannerLoop.next().toLowerCase();
+            System.out.println(input);
+        } while (!input.equals("quit"));
 
 
         // Break statement
-//        while (true) {
-//            System.out.print("Input ");
-//            input = scannerLoop.next().toLowerCase();
-//            if (input.equals("pass"))
-//                continue;
-//            if (input.equals("quit"))
-//                break;
-//            System.out.println(input);
-//        }
+        while (true) {
+            System.out.print("Input ");
+            input = scannerLoop.next().toLowerCase();
+            if (input.equals("pass"))
+                continue;
+            if (input.equals("quit"))
+                break;
+            System.out.println(input);
+        }
 
 
 
@@ -197,9 +196,14 @@ public class More {
             System.out.println("For each loop " + fruit);
 
 
-
+        String message = greetUser("Wariz", "Kolapo");
+        System.out.println(message);
 //        fizzbuzz();
 //        input();
+    }
+
+    public static String greetUser (String firstname, String lastname) {
+        return "Hello " + firstname + " " + lastname + ". This is a method";
     }
 
 
