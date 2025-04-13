@@ -1,3 +1,5 @@
+package com.kolapowariz;
+
 import java.awt.*;
 import java.util.Arrays;
 import java.util.Date;

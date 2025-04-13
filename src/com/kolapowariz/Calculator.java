@@ -1,3 +1,5 @@
+package com.kolapowariz;
+
 import java.text.NumberFormat;
 import java.util.Scanner;
 
@@ -5,14 +7,14 @@ public class Calculator {
     final static byte MONTHS_IN_YEAR = 12;
     final static byte PERCENT = 100;
 
-        public static void main (String [] args) {
-            int principal = (int)readNumber("Principal: ", 1000, 1_000_000);
-            double annualInterestRate = readNumber("Annual Interest Rate: ", 1, 30);
-            byte period = (byte) readNumber("Period (Years): ", 1, 30);
+    public static void main (String [] args) {
+        int principal = (int)readNumber("Principal: ", 1000, 1_000_000);
+        double annualInterestRate = readNumber("Annual Interest Rate: ", 1, 30);
+        byte period = (byte) readNumber("Period (Years): ", 1, 30);
 
-            printMortgage(principal, annualInterestRate, period);
-            printPaymentSchedule(period, principal, annualInterestRate);
-        }
+        printMortgage(principal, annualInterestRate, period);
+        printPaymentSchedule(period, principal, annualInterestRate);
+    }
 
     private static void printMortgage(int principal, double annualInterestRate, byte period) {
         double mortgage = calculateMortgage(principal, annualInterestRate, period);
