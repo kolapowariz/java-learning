@@ -112,5 +112,53 @@ public class Main {
         System.out.println(xOrder);
         System.out.println(yOrder);
 
+
+        // OOP Object Oriented Programming
+
+        var textBox1 = new TextBox();
+        textBox1.setText("Box 1");
+        System.out.println(textBox1.text.toUpperCase());
+
+        var textBox2 = new TextBox();
+        textBox2.setText("Box 2");
+        System.out.println(textBox2.text);
+
+        var textBox3 = textBox1;
+        textBox3.setText("Hello World");
+        System.out.println(textBox1.text);
+
+
+        // Procedural Programming
+
+        int baseSalary = 50_000;
+        int extraHours = 10;
+        int hourlyRate = 20;
+
+        int wage = calculateWage(baseSalary, extraHours, hourlyRate);
+        System.out.println(wage);
+
+        // OOP of calculateWage
+        // Encapsulation - - Bundle the data and methods that operate on the data in a single unit.
+        // Abstraction - reduce complexity by hiding unnecessary details
+        // Coupling - level of dependency between classes
+
+        var employee = new Employee();
+        employee.setBaseSalary(50000);
+        employee.setHourlyRate(10);
+
+        int wage2 = employee.calculateWage(10);
+        System.out.println(wage2);
+
+        var browser = new Browser();
+        browser.navigate("123.5664");
+
+    }
+
+    public static int calculateWage(
+            int baseSalary,
+            int extraHours,
+            int hourlyRate
+    ) {
+        return baseSalary + (extraHours * hourlyRate);
     }
 }
